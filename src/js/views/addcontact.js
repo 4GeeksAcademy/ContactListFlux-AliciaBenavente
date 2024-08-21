@@ -3,13 +3,41 @@ import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
-import "../../styles/demo.css";
+import "../../styles/addcontact.css";
 
-export const Demo = () => {
+export const AddContact = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
 		<div className="container">
+		<form>
+		<div class="row mb-3">
+			<label for="FullName" class="col-sm-2 col-form-label">FullName</label>
+			<div class="col-sm-10">
+			<input type="text" class="form-control" id="FullName"/>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<label for="Email" class="col-sm-2 col-form-label">Email</label>
+			<div class="col-sm-10">
+			<input type="email" class="form-control" id="Email"/>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<label for="Phone" class="col-sm-2 col-form-label">Email</label>
+			<div class="col-sm-10">
+			<input type="number" class="form-control" id="Phone"/>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<label for="Adress" class="col-sm-2 col-form-label">Password</label>
+			<div class="col-sm-10">
+			<input type="text" class="form-control" id="Adress"/>
+			</div>
+		</div>
+		</form>
+
+
 			<ul className="list-group">
 				{store.demo.map((item, index) => {
 					return (
@@ -36,7 +64,7 @@ export const Demo = () => {
 			</ul>
 			<br />
 			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
+				<button className="btn btn-primary">Back to Contact List</button>
 			</Link>
 		</div>
 	);
